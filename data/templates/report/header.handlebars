@@ -1,0 +1,52 @@
+ <meta charset="UTF-8">
+ <style>
+ .des{
+    width: 350px;
+ }
+ #title{
+     text-transform: uppercase;
+ }
+ h3{
+     font-size:14px;
+ }
+ .td{
+     font-size:10px;
+ }
+ </style>
+ 
+ <!--Tabla de la cabezera del documento-->
+ <table border='1' style='border-collapse:collapse'>
+     <tr>
+         <td rowspan='4' style='width:100px'>
+                 <img src='{#image escudo}' style='height: 110px; width:105px'/>
+         </td>
+         <td rowspan='4' class='des'>
+             <center>
+                 <h3>SISTEMA DE GESTIÓN DE LA  CALIDAD</h3>
+                 <h3 id='title'><b>MANUAL DEL INDICADOR – {{nombreindi}}</b></h3>
+             </center>
+         </td>
+         <td class='.td'>Código: SGC-FR-04</td>
+     </tr>
+     <tr>
+         <td class='.td'>Página: {#pageNum} de  {#numPages} </td>
+     </tr>
+     <tr>
+         <td class='.td'>Versión: 3</td>
+     </tr>
+     <tr>
+         <td class='.td'>Vigente a partir de:
+         <label id='fecha'>
+             <script>
+                var f = new Date();
+                var month= f.getMonth() +1
+                if(month<10)
+                    document.write(f.getDate() + "/0" +
+                    month + "/" + f.getFullYear());
+                else
+                    document.write(f.getDate() + "/" +
+                    month + "/" + f.getFullYear());
+                </script> 
+         </label></td>
+     </tr>
+ </table>

@@ -1,0 +1,234 @@
+<meta charset="UTF-8">
+<style>
+    .td, #califica, #lecture{
+        text-align:justify;
+        font-size:10pt;
+    }
+    td{
+        font-size:10pt;
+    }
+    .tdb{
+        width:100px
+    }
+    .table{
+        border-collapse:collapse;
+    }
+</style>
+
+<img src='{#image escudo}' style='display:none; height: 100px' />
+
+<!--
+Esta tabla contiene la informacion basica del indicador 
+-->
+<table border='1' style='border-collapse:collapse'>
+    <tr>
+        <td colspan='2'>
+            <center>
+                <b>DATOS DEL INDICADOR</b>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>1. PROCESO:</b>
+        </td>
+        <td class='td'>{{proceso}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>2. LIDER:</b>
+        </td>
+        <td class='td'>{{lider}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>3. OBJETIVO DEL PROCESO:</b>
+        </td>
+        <td class='td'>{{objproceso}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>4. NOMBRE DEL INDICADOR:</b>
+        </td>
+        <td class='td'>{{nombreindi}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>5. ATRIBUTO A MEDIR:</b>
+        </td>
+        <td class='td'>{{atrmedir}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>6. OBJETIVO DE CALIDAD AL CUAL CONTRIBUYE:</b>
+        </td>
+        <td class='td'>{{objcalidad}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>7. TIPO DE INDICADOR:</b>
+        </td>
+        <td class='td'> {{tipoindi}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>8. FRECUENCIA:</b>
+        </td>
+        <td class='td'>{{frecuencia}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>9. PERIODO DE CALCULO:</b>
+        </td>
+        <td class='td'>{{percalculo}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>10. TENDENCIA ESPERADA:</b>
+        </td>
+        <td class='td'>{{tendencia}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>11. META:</b>
+        </td>
+        <td class='td'>{{meta}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>12. OBJETIVO DEL INDICADOR:</b>
+        </td>
+        <td class='td'>{{objindicador}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>13. RANGO Y FORMA DE INTERPRETACIÓN:</b>
+        </td>
+        <td class='td'>{{rango}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>14. FÓRMULA:</b>
+        </td>
+        <td class='td'>{{formula}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>15. MANERA QUE PODÍA SER GRAFICADO:</b>
+        </td>
+        <td class='td'>{{modografica}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>16. PUNTO DE REGISTRO:</b>
+        </td>
+        <td class='td'>{{puntoregistro}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>17. RESPONSABLE DEL CALCULO</b>
+        </td>
+        <td class='td'>{{responcalculo}}</td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>18. INSTRUCTIVO:</b>
+        </td>
+        <td class='td'>{{instructivo}}</td>
+    </tr>
+</table>
+
+<!--
+Esta tabla contiene el analices de los resultados del indicador
+-->
+<br>
+<table border='1' style='border-collapse:collapse'>
+    <tr>
+        <td colspan='2'> 
+            <center>
+                <b>RESULTADOS - EVOLUCIÓN DEL INDICADOR</b>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>19. FECHA DE CALCULO:</b>
+        </td>
+        <td class='td'><label id='fecha'></label></td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>20. RESULTADO DEL INDICADOR:</b>
+        </td>
+        <td class='td'>
+            <div id='result'></div>
+        </td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>21. CALIFICACIÓN:</b>
+        </td>
+        <td class='td'>
+            <p id='califica'></p>
+        </td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>22. LECTURA DE LA EVOLUCIÓN DEL INDICADOR:</b>
+        </td>
+        <td class='td'>
+            <P id='lecture'></P>
+        </td>
+    </tr>
+    <tr>
+        <td class='tdb'>
+            <b>23. EVOLUCIÓN GRÁFICA:</b>
+        </td>
+        <td class='td'>
+            <img alt='g1' src={{grafica1}}>
+            <br>
+            <img alt=' ' src={{leyend1}}>
+            <br>
+            <img alt='g2' src={{grafica2}}>
+            <br>
+            <img alt=' ' src={{leyend2}}>
+        </td>
+    </tr>
+</table>
+
+<textarea id='hres' cols='40' rows='3' style='display:none;'>{{resultindi}}</textarea>
+
+<textarea id='hcal' cols='40' rows='3' style='display:none;'>{{calificacion}}</textarea>
+<textarea id='hlec' cols='40' rows='3' style='display:none;'>{{lectura}}</textarea>
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script>
+
+
+    $(document).ready(function(){
+        
+        var date = new Date();
+        
+        var day = date.getDate();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        
+        var meses = new Array ("Enero","Febrero","Marzo","Abril",
+        "Mayo","Junio","Julio","Agosto","Septiembre","Octubre",
+        "Noviembre","Diciembre");
+        
+        
+        $("#fecha").html(""+day+" de "+meses[month]+" de "+year);
+        
+        $('#result').html(""+$('#hres').val());
+        
+        $('#califica').html(""+$('#hcal').val());
+        
+        $('#lecture').html(""+$('#hlec').val());
+        
+        $('.est').css('display','none');
+    });
+</script>
